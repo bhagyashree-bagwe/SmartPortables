@@ -1,0 +1,58 @@
+The application needs Tomcat server, MySQL server and MongoDB server:
+
+STEPS FOR INSTALLATION:
+
+1. Install tomcat server:
+
+cd /opt/
+sudo cd /home/Downloads/apache-tomcat-7.0.90.tar.gz .
+sudo cp /home/Downloads/apache-tomcat-7.0.90.tar.gz .
+sudo cp /home/bhagyashree/Downloads/apache-tomcat-7.0.90.tar.gz .
+ls -la
+sudo tar zxvf apache-tomcat-7.0.90.tar.gz 
+sudo chown -R bhagyashree:bhagyashree-Inspiron-3542 apache-tomcat-7.0.90/
+sudo chown -R bhagyashree:bhagyashree apache-tomcat-7.0.90/
+
+-----------------------------------------------------------------------------
+2. Install MYSQL server:
+sudo apt-get install mysql-server
+
+-----------------------------------------------------------------------------
+3.Install Mongo DB server:
+
+sudo apt-get install mongodb - to install mongodb on ubuntu
+
+sudo apt-get update
+---------------------------------------------------------------------------
+
+STEPS FOR EXECUTION:
+
+1.  Place the smartPortables folder in following location ofyour tomcat server
+/apache-tomcat-7.0.90/webapps/
+
+2. Set the classpath:
+export CLASSPATH=/opt/apache-tomcat-7.0.90/lib/servlet-api.jar:/opt/apache-tomcat-7.0.90/lib/mysql-connector-java-8.0.12.jar:/opt/apache-tomcat-7.0.90/lib/mongo-java-driver-3.8.2.jar:/opt/apache-tomcat-7.0.90/lib/gson-2.6.2.jar
+
+3. Compile the source code using following command:
+javac -d ../WEB-INF/classes/ *.java
+
+4. Start the tomcat server using following command:
+/opt/apache-tomcat-7.0.90/bin/startup.sh 
+
+5. Start MYSQL server using following command:
+mysql -u root -p
+
+6. Start Mongo db server using following command:
+sudo service mongodb start
+
+7. Hit following URL on the browser:
+http://localhost:8080/SmartPortables/Home
+-----------------------------------------------------------------------
+
+STEPS TO RUN PYTHON SCRIPTS (Ubuntu):
+
+1. Open terminal
+2. type command "jupyter notebook". It will start jupyter on localhost port of your browser.
+3. Click on "Upload" button in the right top corner of the screen to select and upload the python script file.
+3. Once it loads, click on Cell- Run All
+4. All the required files will be created in the paths specified in your scripts
